@@ -75,7 +75,8 @@
                         CornerRadius="20"
                         FontAttributes="Bold" 
                         Clicked="Button_Clicked"
-                        HorizontalOptions="Center"/>
+                        HorizontalOptions="Center"
+                        />
 
 
             </VerticalStackLayout>
