@@ -30,7 +30,7 @@
                              Maximum="10"
                              Increment="1"/>
 
-                    <Label Text="Crianças:" Grid.Row="1" Grid.Column="0"/>
+                    <Label Text="Crianças:" Grid.Row="1" Grid.Column="0" />
 
                     <Label Grid.Row="1" Grid.Column="1" 
                            TextColor="{StaticResource Primary}" 
@@ -40,27 +40,32 @@
                              x:Name="stp_criancas"
                              Minimum="0"
                              Maximum="10"
-                             Increment="1"/>
+                             Increment="1"
+                             />
 
                 </Grid>
 
                 <Label Text="Escolha sua suíte"/>
-                <Picker x:Name="pck_quarto" Title="Selecione sua Acomodação"/>
+                <Picker x:Name="pck_quarto" Title="Selecione sua Acomodação" ItemDisplayBinding="{Binding Descricao}"/>
 
                 <Frame Padding="10" Margin="10" CornerRadius="12" BorderColor="DarkBlue">
                     <VerticalStackLayout>
                         <Label Text="Período da Estadia"/>
 
                         <HorizontalStackLayout>
-                            <Label Text="Check-in: "/>
+                            <Label Text="Check-in: " Padding="15"/>
                             <DatePicker x:Name="dtpck_checkin"
-                                                Format="dd/MM/yyyy"/>
+                                                DateSelected="dtpck_checkin_DateSelected"
+                                                Format="dd/MM/yyyy"
+                                                BackgroundColor="LightGray"
+                                                 />
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout>
-                            <Label Text="Check-out: "/>
+                            <Label Text="Check-out: " Padding="10"/>
                             <DatePicker x:Name="dtpck_checkout"
-                                                Format="dd/MM/yyyy"/>
+                                                Format="dd/MM/yyyy" 
+                                                BackgroundColor="LightGray"/>
                         </HorizontalStackLayout>
 
                     </VerticalStackLayout>
@@ -68,7 +73,9 @@
 
                 <Button Text="Avançar"
                         CornerRadius="20"
-                        FontAttributes="Bold"/>
+                        FontAttributes="Bold" 
+                        Clicked="Button_Clicked"
+                        HorizontalOptions="Center"/>
 
 
             </VerticalStackLayout>
